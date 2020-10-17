@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Beneficiários";
+}
+
+<div class="modal fade" id="beneficiarios" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">@Html.Raw(ViewBag.Title)</h4>
+            </div>
+            <div class="modal-body">
+                <form id="formBeneficiario" method="post">
+
+                    <div class="row" style="display:flex;align-items:flex-end">
+                        <div class="col-md-offset-1" hidden>
+                            <div class="form-group">
+                                <label for="Id">Id:</label>
+                                <input type="text" class="form-control" id="Id" name="Id">
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label for="CPF">CPF:</label>
+                                <input required="required" type="text" class="form-control" id="CPF" name="CPF" placeholder="Ex.: XXX.XXX.XXX-XX" maxlength="14">
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label for="Nome">Nome:</label>
+                                <input required="required" type="text" class="form-control" id="Nome" name="Nome" placeholder="Ex.: João" maxlength="50">
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="float:none;display:inline-block">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-sm btn-success align-items-end" id="btnIncluir">Incluir</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+                <table class="table" id="tableBeneficiarios">
+
+                    <thead>
+                        <tr>
+                            <th hidden>Id</hr>
+                            <th>CPF</th>
+                            <th>Nome</th>
+                        </tr>
+                    </thead>
+
+                    <tbody></tbody>
+
+                </table>
+            </div>
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
